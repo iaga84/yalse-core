@@ -1,0 +1,92 @@
+openapi: 3.0.1
+info:
+  title: YALSE Core
+  description: 'Yet Another Local Search Engine'
+  contact:
+    email: iaga84@gmail.com
+  license:
+    name: MIT License
+  version: 0.1.0
+servers:
+  - url: http://localhost:8000/api
+paths:
+  /files/scan:
+    post:
+      tags:
+        - Public
+      summary: WIP
+      description: WIP
+      operationId: yalse_core.api.public_files_scan_post
+      requestBody:
+        description: Optional description in *Markdown*
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dry_run:
+                  type: string
+      responses:
+        202:
+          description: request accepted
+  /library:
+    delete:
+      tags:
+        - Private
+      summary: WIP
+      description: WIP
+      operationId: yalse_core.api.private_library_delete
+      responses:
+        200:
+          description: Library reset complete
+  /library/search:
+    post:
+      tags:
+        - Public
+      summary: WIP
+      description: WIP
+      operationId: yalse_core.api.public_library_search_post
+      requestBody:
+        description: Optional description in *Markdown*
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                q:
+                  type: string
+      responses:
+        200:
+          description: request accepted
+  /library/stats:
+    get:
+      tags:
+        - Public
+      summary: WIP
+      description: WIP
+      operationId: yalse_core.api.public_library_stats_get
+      responses:
+        202:
+          description: request accepted
+  /file:
+    get:
+      tags:
+        - Public
+      summary: WIP
+      description: WIP
+      operationId: yalse_core.api.public_file_get
+      parameters:
+        - in: query
+          name: file_hash
+          schema:
+            type: string
+      responses:
+        200:
+          description: WIP
+          content:
+            application/*:
+              schema:
+                type: string
+                format: binary
