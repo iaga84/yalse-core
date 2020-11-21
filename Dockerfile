@@ -12,3 +12,5 @@ COPY . $DIR
 
 EXPOSE 8000
 
+ENTRYPOINT ["gunicorn", "-w", "2","--timeout", "1200", "-b", "0.0.0.0:8000", "yalse_core.app"]
+
